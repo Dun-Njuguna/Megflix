@@ -21,6 +21,9 @@
         android:layout_gravity="start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:menu="@menu/bottom_nav_items" />
+        app:menu="@menu/bottom_nav_items"
+        android:background="@color/colorPrimary"
+        app:itemTextColor="#fff"
+        app:itemIconTint="#fff"/>
 
 </android.support.constraint.ConstraintLayout>
