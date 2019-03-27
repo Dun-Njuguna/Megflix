@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "7155831604",
+    "firebase_url": "https://megflix-ba248.firebaseio.com",
+    "project_id": "megflix-ba248",
+    "storage_bucket": "megflix-ba248.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:7155831604:android:b042f8f513d3c459",
+        "android_client_info": {
+          "package_name": "com.example.megflix"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "7155831604-7aauk7s6lrklg46qhg465v5phhkhqc4s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.megflix",
+            "certificate_hash": "0d2c209055ad2af3a27ef8e414756e8d7f4131ca"
+          }
+        },
+        {
+          "client_id": "7155831604-lkdcjg60440ec9cd4dqa32rf0cd9ug1a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9LDHLlcpC1Gr4HVZKEYH8uSfgzMoe_BQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "7155831604-lkdcjg60440ec9cd4dqa32rf0cd9ug1a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
