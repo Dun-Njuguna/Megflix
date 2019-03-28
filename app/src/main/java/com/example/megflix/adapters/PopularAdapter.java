@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.example.megflix.R;
 import com.example.megflix.models.Popular;
-import com.example.megflix.ui.Detail;
+import com.example.megflix.ui.Details;
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
@@ -28,9 +28,9 @@ import butterknife.ButterKnife;
         private Context mContext;
         private int lastPosition = -1;
 
-        public PopularAdapter(Context context, ArrayList<Popular> movies) {
+        public PopularAdapter(Context context, ArrayList<Popular> popular) {
             mContext = context;
-            mPopular = movies;
+            mPopular = popular;
         }
 
         @Override
@@ -70,11 +70,12 @@ import butterknife.ButterKnife;
 
             @Override
             public void onClick(View v) {
-                int itemPosition = getLayoutPosition();
-                Intent intent = new Intent(mContext, Detail.class);
+                int itemPosition = getLayoutPosition();;
+                Intent intent = new Intent(mContext, Details.class);
                 intent.putExtra("position", itemPosition);
-                intent.putExtra("comics", Parcels.wrap(mPopular));
+                intent.putExtra("popular", Parcels.wrap(mPopular));
                 mContext.startActivity(intent);
+
             }
 
             public void bindPopular(Popular popular) {
@@ -86,6 +87,8 @@ import butterknife.ButterKnife;
             }
 
         }
+
+
 
         private void setAnimation(View viewToAnimate, int position)
         {

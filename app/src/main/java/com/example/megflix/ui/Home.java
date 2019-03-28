@@ -3,6 +3,8 @@ package com.example.megflix.ui;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -33,9 +35,12 @@ import okhttp3.Response;
 public class Home extends Fragment {
 
     public ArrayList<Popular> populars = new ArrayList<>();
+    private Handler mHandler = new Handler(Looper.getMainLooper());
 
     @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
     private PopularAdapter mAdapter;
+
+
 
     public Home() {
         // Required empty public constructor
@@ -54,15 +59,6 @@ public class Home extends Fragment {
         
         getPopularMovies();
     }
-
-
-//    @Override
-//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-//                             Bundle savedInstanceState) {
-//        // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_home, container, false);
-//
-//    }
 
     @Nullable
     @Override
@@ -89,12 +85,12 @@ public class Home extends Fragment {
 
                 populars = service.processResults(response);
 
-                Home.this.getActivity().runOnUiThread(new Runnable() {
+                mHandler.post(new Runnable() {
                     @Override
                     public void run() {
                         mAdapter = new PopularAdapter(getContext(), populars);
                         mRecyclerView.setAdapter(mAdapter);
-                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(Home.this.getContext());
+//                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(Home.this.getContext());
                         GridLayoutManager gridLayoutManager = new GridLayoutManager(Home.this.getContext(),3,LinearLayoutManager.VERTICAL, false);
                         mRecyclerView.setLayoutManager(gridLayoutManager); // set LayoutManager to RecyclerView
 //                        mRecyclerView.setLayoutManager(layoutManager);

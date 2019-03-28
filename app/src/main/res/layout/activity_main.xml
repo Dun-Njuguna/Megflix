@@ -6,12 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
+
     <FrameLayout
         android:id="@+id/frame_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/navigation"
-        android:animateLayoutChanges="true">
+        android:animateLayoutChanges="true"
+        android:background="#000d1a">
     </FrameLayout>
 
     <android.support.design.widget.BottomNavigationView
@@ -22,7 +24,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:menu="@menu/bottom_nav_items"
-        android:background="@color/colorPrimary"
+        android:background="#000d1a"
         app:itemTextColor="#fff"
         app:itemIconTint="#fff"/>
 
